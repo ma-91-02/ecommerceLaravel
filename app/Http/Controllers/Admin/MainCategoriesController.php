@@ -143,7 +143,6 @@ class MainCategoriesController extends Controller
 
             return redirect()->route('admin.maincategories')->with(['success' => 'تم ألتحديث بنجاح']);
         } catch (\Exception $ex) {
-
             return redirect()->route('admin.maincategories')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
         }
     }
@@ -162,10 +161,11 @@ class MainCategoriesController extends Controller
                 return redirect()->route('admin.maincategories')->with(['error' => 'لأ يمكن حذف هذا القسم  ']);
             }
 
-            $image = Str::after($maincategory->photo, 'assets/');
-            $image = base_path('assets/' . $image);
+            $image = Str::after($maincategory->photo, 'public/assets/');
+            $image = base_path('public/assets/' . $image);
             unlink($image); //delete from folder
 
+            $maincategory->categories()->delete(); // delete translation
             $maincategory->delete();
             return redirect()->route('admin.maincategories')->with(['success' => 'تم حذف القسم بنجاح']);
         } catch (\Exception $ex) {

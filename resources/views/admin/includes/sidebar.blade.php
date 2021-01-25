@@ -61,10 +61,10 @@
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                                          data-i18n="nav.dash.ecommerce"> عرض كل المتاجر </a>
                     </li>
                     <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            متجر  </a>
+                             متجر جديد  </a>
                     </li>
                 </ul>
             </li>
